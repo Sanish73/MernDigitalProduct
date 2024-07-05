@@ -23,7 +23,7 @@ router.post('/', async (request, response) => {
         };
         const product = await Product.create(newProduct);
         
-        response.status(201).send({ message: 'Product created successfully' });
+        response.status(201).send(product);
     } catch (error) {
         response.status(500).json({ error: error.message });
     }
